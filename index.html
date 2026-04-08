@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muse &amp; Machine | Real AI systems. Built for reality. Taught clearly.</title>
+  <meta name="description" content="Muse &amp; Machine makes, tests, hardens, and explains AI systems so builders can start further up the curve. Project-based. Career-facing. Grounded in real work.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://musexmachine.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Muse &amp; Machine">
+  <meta property="og:title" content="Real AI systems. Built for reality. Taught clearly.">
+  <meta property="og:description" content="We make, test, harden, and explain AI systems so other builders can start further up the curve.">
+  <meta property="og:url" content="https://musexmachine.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Muse &amp; Machine">
+  <meta name="twitter:description" content="Real AI systems. Built for reality. Taught clearly.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'%3E%3Ctext y='1em' font-size='96'%3E%F0%9F%8F%9B%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --surface: rgba(255,255,255,0.86);
+      --ink: #121212;
+      --muted: #5b5b57;
+      --line: #e4e4df;
+      --shadow: 0 20px 50px rgba(17,17,17,0.08);
+      --radius: 24px;
+      --content: min(1120px, calc(100vw - 32px));
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 46%, #efefeb 100%);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: var(--content); margin: 0 auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(247,247,245,0.82);
+      border-bottom: 1px solid rgba(228,228,223,0.9);
+    }
+    .nav {
+      width: var(--content);
+      margin: 0 auto;
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff 0%, #f1f1ec 100%);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      box-shadow: 0 8px 24px rgba(18,18,18,0.06);
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .hero { padding: 88px 0 64px; }
+    .hero-shell {
+      background: var(--surface);
+      border: 1px solid rgba(228,228,223,0.95);
+      border-radius: 32px;
+      padding: clamp(28px, 5vw, 52px);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 28px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+      background: rgba(255,255,255,0.8);
+    }
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      max-width: 12ch;
+    }
+    p { margin: 0 0 1rem; }
+    .hero p,
+    .lede,
+    .project-card p,
+    .project-list,
+    .teach-list,
+    .who-list,
+    .contact-card p,
+    footer { color: var(--muted); }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 28px 0 20px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button.primary { background: #121212; color: #fff; box-shadow: 0 12px 26px rgba(18,18,18,0.18); }
+    .button.secondary { background: rgba(255,255,255,0.9); border-color: var(--line); }
+    main section { padding: 34px 0 0; }
+    .section-frame {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 4vw, 40px);
+    }
+    .section-kicker {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+    h2 {
+      margin: 8px 0 12px;
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+    .project-grid,
+    .teach-grid,
+    .who-grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .project-card,
+    .teach-card {
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(247,247,245,0.94) 100%);
+    }
+    .project-tag {
+      color: var(--muted);
+      font-size: 0.83rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .project-list,
+    .teach-list,
+    .who-list { margin: 0; padding-left: 1.1rem; }
+    .repo-link { display: inline-flex; margin-top: 12px; font-weight: 700; }
+    .repo-link:hover { text-decoration: underline; }
+    .contact-card {
+      display: grid;
+      gap: 18px;
+      padding: 26px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #111111 0%, #2c2c29 100%);
+      color: #fff;
+    }
+    .contact-card p { color: rgba(255,255,255,0.8); }
+    .contact-card .button.secondary { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: #fff; }
+    footer { padding: 32px 0 64px; }
+    .footer-shell {
+      width: var(--content);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    @media (max-width: 900px) {
+      .project-grid,
+      .teach-grid,
+      .who-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 72px; }
+    }
+    @media (max-width: 640px) {
+      .nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { justify-content: flex-start; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Muse & Machine",
+    "url": "https://musexmachine.com/",
+    "email": "hi@musexmachine.com",
+    "sameAs": [
+      "https://github.com/musexmachine",
+      "https://github.com/droxey/clincher",
+      "https://github.com/droxey/mcp",
+      "https://github.com/droxey/agent-skills"
+    ],
+    "description": "Muse & Machine makes, tests, hardens, and explains AI systems so other builders can start further up the curve."
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Muse and Machine home">
+        <span class="brand-mark">🏛️</span>
+        <span>Muse &amp; Machine</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#how-we-work">How We Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-shell">
+        <div>
+          <span class="eyebrow">🏛️ Project-based. Career-facing. Grounded in real work.</span>
+          <h1>Real AI systems. Built for reality. Taught clearly.</h1>
+          <p>We make, test, harden, and explain AI systems so other builders can start further up the curve.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Explore Projects</a>
+            <a class="button secondary" href="mailto:hi@musexmachine.com">Get in Touch</a>
+          </div>
+          <p>We do the implementation work most people avoid, then turn it into patterns and instruction other builders can actually use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="what-we-do">
+      <div class="wrap section-frame">
+        <span class="section-kicker">What we do</span>
+        <h2>Build the thing. Find what breaks. Teach what holds.</h2>
+        <p class="lede">We take on deployment, safety, structure, evaluation, operations, and the failure points that show up once a system leaves the whiteboard.</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap section-frame">
+        <span class="section-kicker">Projects</span>
+        <h2>Proof in public</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-tag">Infrastructure</span>
+            <h3>Clincher</h3>
+            <p>Hardened deployment for agent infrastructure.</p>
+            <ul class="project-list">
+              <li>Safer path to running an agent on a VPS.</li>
+              <li>Locked-down networking and controlled outbound traffic.</li>
+              <li>Layered hardening and repeatable setup.</li>
+            </ul>
+            <a class="repo-link" href="https://github.com/droxey/clincher" rel="noopener">View Clincher ↗</a>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">Operator tooling</span>
+            <h3>MCP</h3>
+            <p>Operator tools with guardrails.</p>
+            <ul class="project-list">
+              <li>Custom MCP servers with dry-run-first behavior.</li>
+              <li>Allowlists, audit logs, and redaction built into the shape.</li>
+              <li>Clear boundaries around side effects and control surfaces.</li>
+            </ul>
+            <a class="repo-link" href="https://github.com/droxey/mcp" rel="noopener">View MCP ↗</a>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">Agent systems</span>
+            <h3>Agent Skills</h3>
+            <p>Reusable skills with structure.</p>
+            <ul class="project-list">
+              <li>Skill library plus tooling for scanning, auditing, and repair.</li>
+              <li>Portable patterns instead of scattered prompt files.</li>
+              <li>Built to keep agent behavior organized and sane.</li>
+            </ul>
+            <a class="repo-link" href="https://github.com/droxey/agent-skills" rel="noopener">View Agent Skills ↗</a>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">Teaching</span>
+            <h3>AI engineering taught from shipped work</h3>
+            <p>Courses, workflows, and guidance drawn from systems that have actually been built, tested, broken, secured, and improved.</p>
+            <ul class="project-list">
+              <li>Start from real projects, not abstract exercises.</li>
+              <li>Work under security, cost, maintenance, and trust constraints.</li>
+              <li>Learn faster without starting from zero.</li>
+            </ul>
+            <a class="repo-link" href="mailto:hi@musexmachine.com">Work with us ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="wrap section-frame">
+        <span class="section-kicker">Teaching</span>
+        <h2>Project-based learning with sharper edges</h2>
+        <div class="teach-grid">
+          <article class="teach-card">
+            <h3>Start with a real project</h3>
+            <ul class="teach-list">
+              <li>Something concrete enough to surface tradeoffs.</li>
+              <li>Enough pressure to reveal what matters.</li>
+            </ul>
+          </article>
+          <article class="teach-card">
+            <h3>Work under real constraints</h3>
+            <ul class="teach-list">
+              <li>Security, deployment, evaluation, maintenance, and trust.</li>
+              <li>No fake shortcuts.</li>
+            </ul>
+          </article>
+          <article class="teach-card">
+            <h3>Keep what survives contact with reality</h3>
+            <ul class="teach-list">
+              <li>Not every trick deserves to survive.</li>
+              <li>Only the durable parts become the pattern.</li>
+            </ul>
+          </article>
+          <article class="teach-card">
+            <h3>Pass on the pattern clearly</h3>
+            <ul class="teach-list">
+              <li>Explain the reasoning, not just the result.</li>
+              <li>Help the next builder start further up the curve.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-we-work">
+      <div class="wrap section-frame">
+        <span class="section-kicker">How we work</span>
+        <h2>For builders, operators, teams, and educators</h2>
+        <div class="who-grid">
+          <div>
+            <p class="lede">This work is for people who want stronger foundations, better patterns, and a clearer path into serious AI engineering.</p>
+            <ul class="who-list">
+              <li>Builders who want to make their own systems from scratch.</li>
+              <li>Students who learn best by shipping.</li>
+              <li>Teams that need stronger foundations, not louder tools.</li>
+              <li>Educators who want instruction rooted in implementation.</li>
+              <li>Operators who need systems they can trust.</li>
+            </ul>
+          </div>
+          <aside class="contact-card" id="contact">
+            <div>
+              <span class="section-kicker" style="color: rgba(255,255,255,0.64);">Contact</span>
+              <h3>Build, harden, or teach from real work.</h3>
+              <p>If you want help designing, hardening, or teaching AI systems from scratch, get in touch.</p>
+            </div>
+            <a class="button secondary" href="mailto:hi@musexmachine.com">hi@musexmachine.com</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-shell">
+      <span>© 2026 Muse &amp; Machine</span>
+      <span>Custom domain: musexmachine.com</span>
+    </div>
+  </footer>
+</body>
+</html>
